@@ -1,0 +1,706 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第三章：核心API介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="编程流程与使用.html" />
+    
+    
+    <link rel="prev" href="搭建与运行.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Computer_foundation/">
+            
+                <a href="../../Computer_foundation/">
+            
+                    
+                    第一部分：计算机基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Computer_foundation/Computer_composition/">
+            
+                <a href="../../Computer_foundation/Computer_composition/">
+            
+                    
+                    第一模块：计算机组成原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Computer_foundation/Operating_System/">
+            
+                <a href="../../Computer_foundation/Operating_System/">
+            
+                    
+                    第二模块：操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Computer_foundation/Computer_Network/">
+            
+                <a href="../../Computer_foundation/Computer_Network/">
+            
+                    
+                    第三模块：计算机网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Computer_foundation/Data_Struct_Algorithms/">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/">
+            
+                    
+                    第四模块：数据结构与算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Programming_Language/">
+            
+                <a href="../../Programming_Language/">
+            
+                    
+                    第二部分：编程语言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Programming_Language/Python/">
+            
+                <a href="../../Programming_Language/Python/">
+            
+                    
+                    第一模块：Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Programming_Language/C++/">
+            
+                <a href="../../Programming_Language/C++/">
+            
+                    
+                    第二模块：C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第三部分：专业技能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一模块：TensorRT
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="TensorRT加速原理.html">
+            
+                <a href="TensorRT加速原理.html">
+            
+                    
+                    第一章：TensorRT加速原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="搭建与运行.html">
+            
+                <a href="搭建与运行.html">
+            
+                    
+                    第二章：搭建与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.3" data-path="核心API介绍.html">
+            
+                <a href="核心API介绍.html">
+            
+                    
+                    第三章：核心API介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="编程流程与使用.html">
+            
+                <a href="编程流程与使用.html">
+            
+                    
+                    第四章：编程流程与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Opencv/">
+            
+                <a href="../Opencv/">
+            
+                    
+                    第二模块：Opencv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Tensorflow/">
+            
+                <a href="../Tensorflow/">
+            
+                    
+                    第三模块：Tensorflow2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Pytorch/">
+            
+                <a href="../Pytorch/">
+            
+                    
+                    第四模块：Pytorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Algorithm/">
+            
+                <a href="../../Algorithm/">
+            
+                    
+                    第四部分：算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Algorithm/Traditional_machine_learning/">
+            
+                <a href="../../Algorithm/Traditional_machine_learning/">
+            
+                    
+                    第一部分：传统机器学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Algorithm/Deep_Learning/">
+            
+                <a href="../../Algorithm/Deep_Learning/">
+            
+                    
+                    第二部分：深度学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Algorithm/Reinforcement_Learning/">
+            
+                <a href="../../Algorithm/Reinforcement_Learning/">
+            
+                    
+                    第三部分：强化学习算分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第三章：核心API介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;&#x6838;&#x5FC3;api&#x4ECB;&#x7ECD;">&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;&#x6838;&#x5FC3;API&#x4ECB;&#x7ECD;</h1>
+<h2 id="1&#x3001;tensorrt&#x6838;&#x5FC3;&#x5E93;&#x5173;&#x952E;&#x63A5;&#x53E3;&#x4ECB;&#x7ECD;">1&#x3001;TensorRT&#x6838;&#x5FC3;&#x5E93;&#x5173;&#x952E;&#x63A5;&#x53E3;&#x4ECB;&#x7ECD;</h2>
+<ul>
+<li><strong>1.1&#x3001;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#xFF08;Network Definition&#xFF09;</strong></li>
+</ul>
+<p>&#x201C;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#x201D;&#x63A5;&#x53E3;&#x4E3A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x4E86;&#x6307;&#x5B9A;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x56FE;&#x5C42;&#xFF0C;&#x8FD8;&#x6709;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x6BCF;&#x4E2A;&#x652F;&#x6301;&#x7684;&#x56FE;&#x5C42;&#x7C7B;&#x578B;&#x7684;&#x754C;&#x9762;&#x3002;&#x9664;&#x4E86;&#x5C42;&#x7C7B;&#x578B;&#xFF08;&#x4F8B;&#x5982;&#x5377;&#x79EF;&#x5C42;&#x548C;&#x5FAA;&#x73AF;&#x5C42;&#xFF09;&#x4EE5;&#x53CA;&#x63D2;&#x4EF6;&#x5C42;&#x7C7B;&#x578B;&#x4E4B;&#x5916;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;TensorRT&#x672C;&#x8EAB;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<ul>
+<li><strong>1.2&#x3001;&#x4F18;&#x5316;&#x6784;&#x5EFA;&#xFF08;Builder&#xFF09;</strong></li>
+</ul>
+<p>Builder&#x63A5;&#x53E3;&#x5141;&#x8BB8;&#x4ECE;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#x521B;&#x5EFA;&#x4F18;&#x5316;&#x5F15;&#x64CE;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6307;&#x5B9A;&#x6700;&#x5927;&#x6279;&#x91CF;&#x548C;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#xFF0C;&#x6700;&#x5C0F;&#x53EF;&#x63A5;&#x53D7;&#x7CBE;&#x5EA6;&#x6C34;&#x5E73;&#xFF0C;&#x81EA;&#x52A8;&#x8C03;&#x6574;&#x7684;&#x8BA1;&#x65F6;&#x8FED;&#x4EE3;&#x8BA1;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x4E8E;&#x91CF;&#x5316;&#x7F51;&#x7EDC;&#x4EE5;8&#x4F4D;&#x7CBE;&#x5EA6;&#x8FD0;&#x884C;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<ul>
+<li><strong>1.3&#x3001;&#x6267;&#x884C;&#x63A8;&#x7406;&#xFF08;Engine&#xFF09;</strong></li>
+</ul>
+<p>Engine&#x63A5;&#x53E3;&#x5141;&#x8BB8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x63A8;&#x7406;&#x3002;&#x5B83;&#x652F;&#x6301;&#x540C;&#x6B65;&#x548C;&#x5F02;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x5206;&#x6790;&#xFF0C;&#x679A;&#x4E3E;&#x548C;&#x67E5;&#x8BE2;&#x5F15;&#x64CE;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7684;&#x7ED1;&#x5B9A;&#x3002;&#x5355;&#x4E2A;&#x5F15;&#x64CE;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5355;&#x7EC4;&#x8BAD;&#x7EC3;&#x53C2;&#x6570;&#x6765;&#x540C;&#x65F6;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x6279;&#x6B21;&#x3002;</p>
+<ul>
+<li><p><strong>1.4&#x3001;&#x89E3;&#x6790;&#x5668;&#xFF08; Parser&#xFF09;</strong></p>
+<ul>
+<li><p><strong>1.4.1&#x3001;Caffe Parser</strong></p>
+<p>&#x6B64;&#x89E3;&#x6790;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x89E3;&#x6790;&#x5728;BVLC Caffe&#x6216;NVCaffe 0.16&#x4E2D;&#x521B;&#x5EFA;&#x7684;Caffe&#x7F51;&#x7EDC;&#x3002;&#x5B83;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x5C42;&#x6CE8;&#x518C;&#x63D2;&#x4EF6;&#x5DE5;&#x5382;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+<li><p><strong>1.4.2&#x3001;UFF Parser</strong></p>
+<p>&#x6B64;&#x89E3;&#x6790;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x4EE5;UFF&#x683C;&#x5F0F;&#x89E3;&#x6790;&#x7F51;&#x7EDC;&#x3002;&#x5B83;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x6CE8;&#x518C;&#x63D2;&#x4EF6;&#x5DE5;&#x5382;&#x548C;&#x4F20;&#x9012;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x5C42;&#x7684;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+<li><p><strong>1.4.3&#x3001;ONNX Parser</strong></p>
+<p>&#x6B64;&#x89E3;&#x6790;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x89E3;&#x6790;ONNX&#x6A21;&#x578B;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2&#x3001;tensorrt&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x5B66;&#x4E60;">2&#x3001;TensorRT&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x5B66;&#x4E60;</h2>
+<p><a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/c_api/classnvinfer1_1_1_i_network_definition.html" target="_blank">TensorRT API&#x6587;&#x6863;</a></p>
+<h3 id="21&#x3001;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;"><strong>2.1&#x3001;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;</strong></h3>
+<p>&#x2003;&#x2003;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#x7684;API&#x4E2D;&#x4E3B;&#x8981;&#x662F;&#x5305;&#x62EC;&#x5BF9;Tensor&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x5BF9;Layer&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<h4 id="211&#x3001;&#x5173;&#x4E8E;&#x5BF9;tensor&#x7684;&#x5B9A;&#x4E49;"><strong>2.1.1&#x3001;&#x5173;&#x4E8E;&#x5BF9;Tensor&#x7684;&#x5B9A;&#x4E49;</strong></h4>
+<ul>
+<li><p>&#x5BF9;&#x5F20;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x4E0E;&#x5B9E;&#x73B0;
+<img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/E3C9D5608A524125B9CD8EA7D7800DEE/17634" alt="image">
+&#x7C7B;Dims&#x4E3A;tensor&#x7EF4;&#x5EA6;&#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E8C;&#x7EF4;&#xFF0C;&#x4E09;&#x7EF4;&#xFF0C;&#x548C;&#x56DB;&#x7EF4;&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li><p>Tensor&#x7684;&#x5B9A;&#x4E49;&#x4E0E;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+<p>Tensor&#x7684;&#x5B9A;&#x4E49;&#x4E0E;&#x64CD;&#x4F5C;&#x5B9E;&#x73B0;&#x5728;&#x7C7B;ITensor&#x7C7B;&#x4E2D;&#x3002; <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/c_api/classnvinfer1_1_1_i_tensor.html" target="_blank">link</a>
+<img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/90CF3DD9C4F64A71A34668C1923E6F35/17670" alt="image"></p>
+<h4 id="212&#x3001;&#x5173;&#x4E8E;&#x5BF9;layer&#x7684;&#x5B9A;&#x4E49;"><strong>2.1.2&#x3001;&#x5173;&#x4E8E;&#x5BF9;Layer&#x7684;&#x5B9A;&#x4E49;</strong></h4>
+<p>&#x2003;&#x2003;&#x7F51;&#x7EDC;&#x5C42;&#x7684;&#x57FA;&#x7C7B;&#x4E3A;ILayer&#x7C7B;&#xFF0C;&#x6240;&#x6709;&#x6210;&#x7684;&#x5B9A;&#x4E49;&#x4E3A;&#x8FD9;&#x4E2A;&#x57FA;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x3002;   <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-api/c_api/classnvinfer1_1_1_i_layer.html" target="_blank">link</a></p>
+<p><img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/0649E24DE0BE4DC386A68D0D814245B1/17683" alt="image"></p>
+<ul>
+<li>&#x7528;&#x6237;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x5C42;&#x7684;&#x63D2;&#x4EF6;&#x7C7B;</li>
+</ul>
+<p><img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/70216FC079774A87A27B6572EE1315D5/17767" alt="image"></p>
+<h3 id="22&#x3001;&#x4F18;&#x5316;&#x6784;&#x5EFA;"><strong>2.2&#x3001;&#x4F18;&#x5316;&#x6784;&#x5EFA;</strong></h3>
+<p>&#x4F18;&#x5316;&#x6784;&#x5EFA;&#x7684;API&#x4E3B;&#x8981;&#x5728;&#x7C7B;class IBuilder&#x4E2D;</p>
+<h3 id="23&#x3001;&#x6267;&#x884C;&#x63A8;&#x7406;"><strong>2.3&#x3001;&#x6267;&#x884C;&#x63A8;&#x7406;</strong></h3>
+<h3 id="24&#x3001;&#x89E3;&#x6790;&#x5668;"><strong>2.4&#x3001;&#x89E3;&#x6790;&#x5668;</strong></h3>
+<h2 id="3&#x3001;c-api&#x4F7F;&#x7528;&#x6D41;&#x7A0B;"><strong>3&#x3001;C++ API&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</strong></h2>
+<pre><code>graph TD
+A[&#x5B9E;&#x4F8B;&#x5316;TensorRT&#x5BF9;&#x8C61;]--&gt;B[&#x521B;&#x5EFA;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;]
+B --&gt; E[&#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;]
+E --&gt; F[&#x5E8F;&#x5217;&#x5316;&#x6A21;&#x578B;]
+F --&gt; G[&#x6267;&#x884C;&#x63A8;&#x7406;]
+G --&gt; H[&#x5185;&#x5B58;&#x7BA1;&#x7406;]
+</code></pre><p>&#x2003;&#x2003;&#x7A0B;&#x5E8F;&#x7CFB;&#x7EDF;&#x7ED3;&#x6784;&#x56FE;&#xFF1A;
+<img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/E2E74907C7024FF0A96449A4939E1AD4/18018" alt="image"></p>
+<h3 id="31&#x3001;&#x6784;&#x5EFA;&#x9636;&#x6BB5;"><strong>3.1&#x3001;&#x6784;&#x5EFA;&#x9636;&#x6BB5;</strong></h3>
+<ul>
+<li>&#x4EE3;&#x7801;&#x89E3;&#x6790;&#xFF08;TensorRT&#x4E2D;&#x7684;sampleMNIST&#x4F8B;&#x7A0B;&#xFF09;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-C++"><span class="hljs-comment">// &#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x7684;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">bool</span> SampleMNIST::build()
+{
+    <span class="hljs-comment">// &#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x5165;ILogger &#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">auto</span> builder = SampleUniquePtr&lt;nvinfer1::IBuilder&gt;(nvinfer1::createInferBuilder(gLogger.getTRTLogger()));
+    <span class="hljs-keyword">if</span> (!builder)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x6A21;&#x578B;&#x7684;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">auto</span> network = SampleUniquePtr&lt;nvinfer1::INetworkDefinition&gt;(builder-&gt;createNetwork());
+    <span class="hljs-keyword">if</span> (!network)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-comment">// &#x521B;&#x5EFA;Caffe&#x7684;&#x89E3;&#x6790;&#x5668;&#x89E3;&#x6790;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;</span>
+    <span class="hljs-keyword">auto</span> parser = SampleUniquePtr&lt;nvcaffeparser1::ICaffeParser&gt;(nvcaffeparser1::createCaffeParser());
+    <span class="hljs-keyword">if</span> (!parser)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-comment">// &#x5C06;&#x6784;&#x5EFA;&#x5668;&#x3001;&#x7F51;&#x7EDC;&#x5BF9;&#x8C61;&#x3001;&#x548C;&#x89E3;&#x6790;&#x5668;&#x89E3;&#x6790;&#x7684;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x5173;&#x8054;&#xFF0C;&#x548C;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x586B;&#x5145;&#x3002;</span>
+    constructNetwork(builder, network, parser);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x7684;&#x53C2;&#x6570;&#x3002;</span>
+    builder-&gt;setMaxBatchSize(mParams.batchSize);
+    builder-&gt;setMaxWorkspaceSize(<span class="hljs-number">16</span>_MB);
+    builder-&gt;allowGPUFallback(<span class="hljs-literal">true</span>);
+    builder-&gt;setFp16Mode(mParams.fp16);
+    builder-&gt;setInt8Mode(mParams.int8);
+    builder-&gt;setStrictTypeConstraints(<span class="hljs-literal">true</span>);
+
+    samplesCommon::enableDLA(builder.get(), mParams.dlaCore);
+     <span class="hljs-comment">// &#x6267;&#x884C;&#x63A8;&#x7406;&#x548C;&#x521B;&#x5EFA;&#x5E8F;&#x5217;&#x5316;&#x6587;&#x4EF6;</span>
+    mEngine = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;nvinfer1::ICudaEngine&gt;(builder-&gt;buildCudaEngine(*network), samplesCommon::InferDeleter());
+
+    <span class="hljs-keyword">if</span> (!mEngine)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    assert(network-&gt;getNbInputs() == <span class="hljs-number">1</span>);
+    mInputDims = network-&gt;getInput(<span class="hljs-number">0</span>)-&gt;getDimensions();
+    assert(mInputDims.nbDims == <span class="hljs-number">3</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<h3 id="32&#x3001;&#x90E8;&#x7F72;&#x9636;&#x6BB5;"><strong>3.2&#x3001;&#x90E8;&#x7F72;&#x9636;&#x6BB5;</strong></h3>
+<ul>
+<li>&#x4EE3;&#x7801;&#x89E3;&#x6790;&#xFF08;TensorRT&#x4E2D;&#x7684;sampleMNIST&#x4F8B;&#x7A0B;&#xFF09;</li>
+</ul>
+<pre><code>// &#x90E8;&#x7F72;&#x548C;&#x5E94;&#x7528;TensorRT&#x63A8;&#x7406;&#x5F15;&#x64CE;
+bool SampleMNIST::infer()
+{
+    // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x7BA1;&#x7406;&#x5BF9;&#x8C61;&#x3002;
+    samplesCommon::BufferManager buffers(mEngine, mParams.batchSize);
+
+    auto context = SampleUniquePtr&lt;nvinfer1::IExecutionContext&gt;(mEngine-&gt;createExecutionContext());
+    if (!context)
+    {
+        return false;
+    }
+
+    // &#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x6765;&#x8FDB;&#x884C;&#x63A8;&#x7406;
+    srand(time(NULL));
+    const int digit = rand() % 10;
+
+    //  &#x5C06;&#x8F93;&#x5165;&#x6570;&#x636E;&#x8BFB;&#x5165;&#x7BA1;&#x7406;&#x7684;&#x7F13;&#x51B2;&#x533A;
+    //  &#x8FD9;&#x4E2A;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x4E3A;&#x4E00;&#x4E2A;batchSize&#x5927;&#x5C0F;&#x7684;Tensor&#x6570;&#x636E;
+    assert(mParams.inputTensorNames.size() == 1);
+    if (!processInput(buffers, mParams.inputTensorNames[0], digit))
+        return false;
+
+    // &#x521B;&#x5EFA;CUDA&#x6D41;&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x63A8;&#x7406;
+    cudaStream_t stream;
+    CHECK(cudaStreamCreate(&amp;stream));
+
+    // &#x5F02;&#x6B65;&#x5730;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x4E3B;&#x673A;&#x8F93;&#x5165;&#x7F13;&#x51B2;&#x533A;&#x590D;&#x5236;&#x5230;&#xFF08;GPU&#xFF09;&#x8BBE;&#x5907;&#x8F93;&#x5165;&#x7F13;&#x51B2;&#x533A;
+    buffers.copyInputToDeviceAsync(stream);
+
+    // &#x5F02;&#x6B65;&#x7684;&#x5BF9;&#x6392;&#x961F;&#x7684;&#x63A8;&#x7406;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x63A8;&#x7406;
+    if (!context-&gt;enqueue(mParams.batchSize, buffers.getDeviceBindings().data(), stream, nullptr))
+        return false;
+
+    // &#x5F02;&#x6B65;&#x5730;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x8BBE;&#x5907;&#x8F93;&#x51FA;&#x7F13;&#x51B2;&#x533A;&#x590D;&#x5236;&#x5230;&#x4E3B;&#x673A;&#x8F93;&#x51FA;&#x7F13;&#x51B2;&#x533A;
+    buffers.copyOutputToHostAsync(stream);
+
+    // &#x7B49;&#x5F85;CUDA&#x5DE5;&#x4F5C;&#x6D41;&#x5B8C;&#x6210;
+    cudaStreamSynchronize(stream);
+
+    // &#x91CA;&#x653E;CUDA&#x5DE5;&#x4F5C;&#x6D41;
+    cudaStreamDestroy(stream);
+
+    // &#x68C0;&#x67E5;&#x5E76;&#x6253;&#x5370;&#x63A8;&#x7406;&#x7684;&#x8F93;&#x51FA;
+    // &#x5E94;&#x8BE5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x5F20;&#x91CF;
+    assert(mParams.outputTensorNames.size() == 1);
+    bool outputCorrect = verifyOutput(buffers, mParams.outputTensorNames[0], digit);
+
+    return outputCorrect;
+}
+</code></pre><h3 id="33&#x3001;&#x6E05;&#x7406;libprotobuf&#x6587;&#x4EF6;"><strong>3.3&#x3001;&#x6E05;&#x7406;libprotobuf&#x6587;&#x4EF6;</strong></h3>
+<p>&#x5728;&#x89E3;&#x6790;&#x5668;&#x89E3;&#x6790;&#x5B8C;&#x6A21;&#x578B;&#x6587;&#x4EF6;&#x540E;&#x9700;&#x8981;&#x5C06;&#xFF0C;&#x6A21;&#x578B;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x91CA;&#x653E;&#x3002;</p>
+<pre><code>bool SampleMNIST::teardown()
+{
+    //&#x6CE8;&#x610F;&#x5DF2;&#x8C03;&#x7528;ShutdownProtobufLibrary()&#x3002;&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x7F13;&#x51B2;&#x533A;&#x5E93;&#x7684;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x4E0D;&#x5B89;&#x7684;
+    nvcaffeparser1::shutdownProtobufLibrary();
+    return true;
+}
+</code></pre><p>&#x6700;&#x540E;&#x7ED3;&#x679C;&#xFF1A;
+<img src="https://note.youdao.com/yws/public/resource/a48e105e9dcf98f685bf69937a8ead17/xmlnote/5AFEDC3E864845B1AEF310943FDCE747/18178" alt="image"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="搭建与运行.html" class="navigation navigation-prev " aria-label="Previous page: 第二章：搭建与运行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="编程流程与使用.html" class="navigation navigation-next " aria-label="Next page: 第四章：编程流程与使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第三章：核心API介绍","level":"1.4.1.3","depth":3,"next":{"title":"第四章：编程流程与使用","level":"1.4.1.4","depth":3,"path":"Professional_Skills/TensorRT/编程流程与使用.md","ref":"Professional_Skills/TensorRT/编程流程与使用.md","articles":[]},"previous":{"title":"第二章：搭建与运行","level":"1.4.1.2","depth":3,"path":"Professional_Skills/TensorRT/搭建与运行.md","ref":"Professional_Skills/TensorRT/搭建与运行.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Professional_Skills/TensorRT/核心API介绍.md","mtime":"2019-07-24T03:47:27.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-24T04:01:36.614Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
