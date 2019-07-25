@@ -9,6 +9,7 @@
 * [第二部分：编程语言](Programming_Language/README.md)
     * [第一模块：Python](Programming_Language/Python/README.md)
     * [第二模块：C++](Programming_Language/C++/README.md)
+    * [第三模块：设计模式](Programming_Language/Design_Patterns/README.md)
 * [第三部分：专业技能](Professional_Skills/README.md)
     * [第一模块：TensorRT](Professional_Skills/TensorRT/README.md)
         * [第一章：TensorRT加速原理](Professional_Skills/TensorRT/TensorRT加速原理.md)
