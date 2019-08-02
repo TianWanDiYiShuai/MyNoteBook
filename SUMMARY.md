@@ -27,7 +27,6 @@
         * [第一章：TensorRT加速原理](Professional_Skills/TensorRT/TensorRT加速原理.md)
         * [第二章：搭建与运行](Professional_Skills/TensorRT/搭建与运行.md)
         * [第三章：核心API介绍](Professional_Skills/TensorRT/核心API介绍.md)
-        * [第四章：编程流程与使用](Professional_Skills/TensorRT/编程流程与使用.md)
         * [第五章：安装部署及遇到的问题和解决方法](Professional_Skills/TensorRT/遇到的问题和解决方法.md)
     * [第二模块：Opencv](Professional_Skills/Opencv/README.md)
     * [第三模块：Tensorflow2.0](Professional_Skills/Tensorflow/README.md)
