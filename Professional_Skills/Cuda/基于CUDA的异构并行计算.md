@@ -113,3 +113,42 @@ CUDA提供了两层API来管理GPU设备和组织线程
 - CUDA运行时API 
 
   ![](/Image/专业技能/CUDA/NVCC编译器.jpg)
+
+
+### 4、CUDA编程hello world
+
+```
+#include <stdio.h>
+__global__ void helloFromGPU(void)
+{
+	printf("Hello World from GPU!\n");
+}
+
+int main(void)
+{
+	printf("Hello World from GPU!\n");
+
+	helloFromGPU <<<1,10>>>();
+	cudaDeviceReset();
+	return 0;
+}
+```
+
+编译：
+
+`nvcc  hello.cu -o hello`
+
+## 5、CUDA编程结构
+
+1. 分配GPU内存。 
+
+2. 从CPU内存中拷贝数据到GPU内存。 
+
+3. 调用CUDA内核函数来完成程序指定的运算。 
+
+4. 将数据从GPU拷回CPU内存。 
+
+5. 释放GPU内存空间
+
+
+
