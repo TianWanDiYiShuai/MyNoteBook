@@ -1,0 +1,1247 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第四章：编程流程及使用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="遇到的问题和解决方法.html" />
+    
+    
+    <link rel="prev" href="核心API介绍.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Computer_foundation/">
+            
+                <a href="../../Computer_foundation/">
+            
+                    
+                    第一部分：计算机基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Computer_foundation/Computer_composition/">
+            
+                <a href="../../Computer_foundation/Computer_composition/">
+            
+                    
+                    第一模块：计算机组成原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Computer_foundation/Operating_System/">
+            
+                <a href="../../Computer_foundation/Operating_System/">
+            
+                    
+                    第二模块：操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Computer_foundation/Computer_Network/">
+            
+                <a href="../../Computer_foundation/Computer_Network/">
+            
+                    
+                    第三模块：计算机网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Computer_foundation/Data_Struct_Algorithms/">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/">
+            
+                    
+                    第四模块：数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../Computer_foundation/Data_Struct_Algorithms/概论.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/概论.html">
+            
+                    
+                    第一章：概论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../Computer_foundation/Data_Struct_Algorithms/线性表.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/线性表.html">
+            
+                    
+                    第二章：线性表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../Computer_foundation/Data_Struct_Algorithms/栈和队列.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/栈和队列.html">
+            
+                    
+                    第三章：栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../Computer_foundation/Data_Struct_Algorithms/串.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/串.html">
+            
+                    
+                    第四章：串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../../Computer_foundation/Data_Struct_Algorithms/数组和广义表.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/数组和广义表.html">
+            
+                    
+                    第五章：数组和广义表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../../Computer_foundation/Data_Struct_Algorithms/树和二叉树.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/树和二叉树.html">
+            
+                    
+                    第六章：树和二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.7" data-path="../../Computer_foundation/Data_Struct_Algorithms/图.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/图.html">
+            
+                    
+                    第七章：图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.8" data-path="../../Computer_foundation/Data_Struct_Algorithms/动态存储管理.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/动态存储管理.html">
+            
+                    
+                    第八章：动态存储管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.9" data-path="../../Computer_foundation/Data_Struct_Algorithms/查找.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/查找.html">
+            
+                    
+                    第九章：查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.10" data-path="../../Computer_foundation/Data_Struct_Algorithms/内部查找.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/内部查找.html">
+            
+                    
+                    第十章：内部查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.11" data-path="../../Computer_foundation/Data_Struct_Algorithms/外部查找.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/外部查找.html">
+            
+                    
+                    第十一章：外部查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.12" data-path="../../Computer_foundation/Data_Struct_Algorithms/文件.html">
+            
+                <a href="../../Computer_foundation/Data_Struct_Algorithms/文件.html">
+            
+                    
+                    第十二章：文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Programming_Language/">
+            
+                <a href="../../Programming_Language/">
+            
+                    
+                    第二部分：编程语言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Programming_Language/Python/">
+            
+                <a href="../../Programming_Language/Python/">
+            
+                    
+                    第一模块：Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Programming_Language/C++/">
+            
+                <a href="../../Programming_Language/C++/">
+            
+                    
+                    第二模块：C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../Programming_Language/Design_Patterns/">
+            
+                <a href="../../Programming_Language/Design_Patterns/">
+            
+                    
+                    第三模块：设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第三部分：专业技能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一模块：TensorRT
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="TensorRT加速原理.html">
+            
+                <a href="TensorRT加速原理.html">
+            
+                    
+                    第一章：TensorRT加速原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="搭建与运行.html">
+            
+                <a href="搭建与运行.html">
+            
+                    
+                    第二章：搭建与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="核心API介绍.html">
+            
+                <a href="核心API介绍.html">
+            
+                    
+                    第三章：核心API介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.4" data-path="编程流程及使用.html">
+            
+                <a href="编程流程及使用.html">
+            
+                    
+                    第四章：编程流程及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="遇到的问题和解决方法.html">
+            
+                <a href="遇到的问题和解决方法.html">
+            
+                    
+                    第五章：安装部署及遇到的问题和解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Opencv/">
+            
+                <a href="../Opencv/">
+            
+                    
+                    第二模块：Opencv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Tensorflow/">
+            
+                <a href="../Tensorflow/">
+            
+                    
+                    第三模块：Tensorflow2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Pytorch/">
+            
+                <a href="../Pytorch/">
+            
+                    
+                    第四模块：Pytorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Cuda/">
+            
+                <a href="../Cuda/">
+            
+                    
+                    第五模块：Cuda
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../Cuda/基于CUDA的异构并行计算.html">
+            
+                <a href="../Cuda/基于CUDA的异构并行计算.html">
+            
+                    
+                    第一章：基于CUDA的异构并行计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../Cuda/CUDA编程模型.html">
+            
+                <a href="../Cuda/CUDA编程模型.html">
+            
+                    
+                    第二章：CUDA编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../Cuda/CUDA执行模型.html">
+            
+                <a href="../Cuda/CUDA执行模型.html">
+            
+                    
+                    第三章：CUDA执行模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../Cuda/全局内存.html">
+            
+                <a href="../Cuda/全局内存.html">
+            
+                    
+                    第四章：全局内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../Cuda/共享内存和常量内存.html">
+            
+                <a href="../Cuda/共享内存和常量内存.html">
+            
+                    
+                    第五章：共享内存和常量内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../Cuda/流和并发.html">
+            
+                <a href="../Cuda/流和并发.html">
+            
+                    
+                    第六章：流和并发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="../Cuda/调整指令级原语.html">
+            
+                <a href="../Cuda/调整指令级原语.html">
+            
+                    
+                    第七章：调整指令级原语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="../Cuda/GPU加速库和OpenACC.html">
+            
+                <a href="../Cuda/GPU加速库和OpenACC.html">
+            
+                    
+                    第八章：GPU加速库和OpenACC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.9" data-path="../Cuda/多GPU编程.html">
+            
+                <a href="../Cuda/多GPU编程.html">
+            
+                    
+                    第九章：多GPU编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.10" data-path="../Cuda/程序实现的注意事项.html">
+            
+                <a href="../Cuda/程序实现的注意事项.html">
+            
+                    
+                    第十章：程序实现的注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Algorithm/">
+            
+                <a href="../../Algorithm/">
+            
+                    
+                    第四部分：算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Algorithm/Traditional_machine_learning/">
+            
+                <a href="../../Algorithm/Traditional_machine_learning/">
+            
+                    
+                    第一部分：传统机器学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Algorithm/Deep_Learning/">
+            
+                <a href="../../Algorithm/Deep_Learning/">
+            
+                    
+                    第二部分：深度学习算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Algorithm/Reinforcement_Learning/">
+            
+                <a href="../../Algorithm/Reinforcement_Learning/">
+            
+                    
+                    第三部分：强化学习算分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第四章：编程流程及使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x56DB;&#x7AE0;&#xFF1A;&#x7F16;&#x7A0B;&#x6D41;&#x7A0B;&#x4E0E;&#x4F7F;&#x7528;">&#x7B2C;&#x56DB;&#x7AE0;&#xFF1A;&#x7F16;&#x7A0B;&#x6D41;&#x7A0B;&#x4E0E;&#x4F7F;&#x7528;</h1>
+<h2 id="1&#x3001;pd&#x51BB;&#x7ED3;&#x56FE;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;uff&#x6587;&#x4EF6;">1&#x3001;&#x201C;.pd&#x201D;&#x51BB;&#x7ED3;&#x56FE;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;UFF&#x6587;&#x4EF6;</h2>
+<p>&#x5728;TensorRT&#x7684;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x4E2D;&#x9700;&#x8981;&#x6CE8;&#x610F;cuda&#x3001;cudnn&#x3001;TensorRT&#x7684;&#x7248;&#x672C;&#x5BF9;&#x5E94;&#x5339;&#x914D;&#x5173;&#x7CFB;&#xFF0C;&#x5728;&#x6700;&#x65B0;&#x7684;TensorRT5.1.2&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6700;&#x4F4E;&#x652F;&#x6301;cudnn&#x7684;&#x7248;&#x672C;&#x4E3A;7.5.0&#xFF0C;cuda&#x7248;&#x672C;&#x6CA1;&#x6709;&#x8BD5;&#x8FC7;&#x4F46;&#x662F;cuda10&#x6BD4;&#x8F83;&#x597D;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x7684;Tensorflow&#x7248;&#x672C;&#xFF0C;&#x65B0;&#x7684;Tensorflow2.0&#x7248;&#x672C;&#x8FD8;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x652F;&#x6301;pd&#x6587;&#x4EF6;&#x8F6C;uff&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;Tensorflow1&#x7248;&#x672C;&#x3002;</p>
+<ul>
+<li><p><strong>&#x83B7;&#x53D6;convert-to-uff&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</strong></p>
+<pre><code># &#x83B7;&#x53D6;which convert-to-uff&#x8DEF;&#x5F84;
+# &#x5176;&#x8DEF;&#x5F84;&#x7684;&#x4E00;&#x822C;&#x4F4D;&#x7F6E;&#x4E3A;&#x5BF9;&#x4E8E;python2 /usr/lib/python2.7/dist-packages/uff/bin/convert_to_uff.py,
+# &#x5BF9;&#x4E8E;python3 /usr/lib/python3.6/dist-packages/uff/bin/convert_to_uff.py,
+# &#x5BF9;&#x4E8E;&#x4F7F;&#x7528;conda&#x521B;&#x5EFA;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF1A;~/.conda/envs/TensorRT/bin/convert-to-uff
+which convert-to-uff
+</code></pre></li>
+<li><p><strong>.pb&#x51BB;&#x7ED3;&#x56FE;</strong></p>
+<ul>
+<li><p>pd&#x51BB;&#x7ED3;&#x56FE;&#x7684;&#x751F;&#x6210;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> load_model
+<span class="hljs-keyword">import</span> keras.backend <span class="hljs-keyword">as</span> K
+<span class="hljs-keyword">from</span> tensorflow.python.framework <span class="hljs-keyword">import</span> graph_io
+<span class="hljs-keyword">from</span> tensorflow.python.tools <span class="hljs-keyword">import</span> freeze_graph
+<span class="hljs-keyword">from</span> tensorflow.core.protobuf <span class="hljs-keyword">import</span> saver_pb2
+<span class="hljs-keyword">from</span> tensorflow.python.training <span class="hljs-keyword">import</span> saver <span class="hljs-keyword">as</span> saver_lib
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">convert_keras_to_pb</span><span class="hljs-params">(keras_model, out_names, models_dir, model_filename)</span>:</span>
+    model = load_model(keras_model)
+    K.set_learning_phase(<span class="hljs-number">0</span>)
+    sess = K.get_session()
+    saver = saver_lib.Saver(write_version=saver_pb2.SaverDef.V2)
+    checkpoint_path = saver.save(sess, <span class="hljs-string">&apos;saved_ckpt&apos;</span>, global_step=<span class="hljs-number">0</span>, latest_filename=<span class="hljs-string">&apos;checkpoint_state&apos;</span>)
+    graph_io.write_graph(sess.graph, <span class="hljs-string">&apos;.&apos;</span>, <span class="hljs-string">&apos;tmp.pb&apos;</span>)
+    freeze_graph.freeze_graph(<span class="hljs-string">&apos;./tmp.pb&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,
+                              <span class="hljs-keyword">False</span>, checkpoint_path, out_names,
+                              <span class="hljs-string">&quot;save/restore_all&quot;</span>, <span class="hljs-string">&quot;save/Const:0&quot;</span>,
+                              models_dir+model_filename, <span class="hljs-keyword">False</span>, <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p><a href="https://www.tensorflow.org/guide/extend/model_files#freezing" target="_blank">tensorflow&#x51BB;&#x7ED3;&#x56FE;&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p><strong>pd&#x8F6C;&#x6362;&#x4E3A;uff</strong></p>
+<pre><code>convert-to-uff input_file [-o output_file] [-O output_node]
+</code></pre><p><img src="D:/&#x4E2A;&#x4EBA;&#x6587;&#x4EF6;/MyNoteBook/Professional_Skills/TensorRT/Image/&#x4E13;&#x4E1A;&#x6280;&#x80FD;/TensorRT/convert-to-uff.png" alt=""></p>
+</li>
+<li><p><strong>&#x8BBE;&#x7F6E;config.py&#x6587;&#x4EF6;</strong></p>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="2&#x3001;&#x901A;&#x8FC7;uff&#x6587;&#x4EF6;&#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5668;">2&#x3001;&#x901A;&#x8FC7;UFF&#x6587;&#x4EF6;&#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5668;</h2>
+<ul>
+<li><p>2.1&#x3001;&#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5668;&#x5BF9;&#x8C61;</p>
+<pre><code>    // &#x4F7F;&#x7528;TensorRT&#x7684;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61; &#x521B;&#x5EFA; builder
+    IBuilder* builder = createInferBuilder(gLogger.getTRTLogger());
+    assert(builder != nullptr);
+</code></pre></li>
+<li><p>2.2&#x3001;&#x521B;&#x5EFA;&#x7F51;&#x7EDC;</p>
+<pre><code>    // &#x4E3A;&#x89E3;&#x6790;&#x5668;&#x521B;&#x5EFA;&#x7F51;&#x7EDC;
+    INetworkDefinition* network = builder-&gt;createNetwork();
+</code></pre></li>
+<li><p>2.3&#x3001;&#x4F7F;&#x7528;UFF&#x89E3;&#x6790;&#x5668;&#x52A0;&#x8F7D;&#x4E0E;&#x89E3;&#x6790;UFF&#x6587;&#x4EF6;</p>
+<pre><code>   if (!parser-&gt;parse(uffFile, *network, nvinfer1::DataType::kFLOAT))
+    {
+        gLogError &lt;&lt; &quot;Failure while parsing UFF file&quot; &lt;&lt; std::endl;
+        return nullptr;
+    }
+</code></pre></li>
+<li><p>2.4&#x3001;&#x8BBE;&#x7F6E;&#x63A8;&#x7406;&#x5668;&#x7684;&#x63A8;&#x7406;&#x53C2;&#x6570;</p>
+<ul>
+<li>&#x6700;&#x5927;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x6307;&#x5B9A;TensorRT&#x5C06;&#x4F18;&#x5316;&#x7684;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x8F83;&#x5C0F;&#x7684;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x3002;</li>
+<li>&#x5C42;&#x7B97;&#x6CD5;&#x901A;&#x5E38;&#x9700;&#x8981;&#x4E34;&#x65F6;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x3002;&#x6B64;&#x53C2;&#x6570;&#x9650;&#x5236;&#x7F51;&#x7EDC;&#x4E2D;&#x4EFB;&#x4F55;&#x5C42;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x5927;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x7684;scratch&#x4E0D;&#x8DB3;&#xFF0C;&#x5219;TensorRT&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x7ED9;&#x5B9A;&#x5C42;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+</ul>
+<pre><code>// &#x8BBE;&#x7F6E;&#x63A8;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#x6700;&#x5927;BatchSize&#x7684;&#x5927;&#x5C0F;
+builder-&gt;setMaxBatchSize(maxBatchSize);
+// &#x5BF9;&#x4E8E;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x4E3A;5&#x7684;&#x63D2;&#x4EF6;&#x5C42;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5927;&#x7EA6;1GB&#x7684;&#x5212;&#x75D5;&#x7A7A;&#x95F4;
+builder-&gt;setMaxWorkspaceSize(1_GB);
+// &#x8BBE;&#x7F6E;&#x63A8;&#x7406;&#x7684;&#x7CBE;&#x5EA6;
+    if (gArgs.runInInt8)
+    {
+        builder-&gt;setInt8Mode(gArgs.runInInt8);
+        builder-&gt;setInt8Calibrator(calibrator);
+    }    
+    builder-&gt;setFp16Mode(gArgs.runInFp16);
+//
+</code></pre></li>
+<li><p>2.5&#x3001;&#x6784;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;</p>
+<pre><code>    ICudaEngine* engine = builder-&gt;buildCudaEngine(*network);
+    if (!engine)
+    {
+        gLogError &lt;&lt; &quot;Unable to create engine&quot; &lt;&lt; std::endl;
+        return nullptr;
+    }
+</code></pre></li>
+<li><p>2.6&#x3001;&#x5728;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5728;&#x9700;&#x8981;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x548C;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x5C06;&#x5176;&#x9500;&#x6BC1;</p>
+<pre><code> network-&gt;destroy();
+ parser-&gt;destroy();
+</code></pre></li>
+<li><p>2.7&#x3001;&#x5E8F;&#x5217;&#x5316;&#x63A8;&#x7406;&#x6587;&#x4EF6;</p>
+<pre><code> IHostMemory* trtModelStream = engine-&gt;serialize();
+</code></pre></li>
+<li><p>2.8&#x3001;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x4FDD;&#x5B58;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;&#x63A8;&#x7406;&#x6587;&#x4EF6;</p>
+<pre><code>// &#x4FDD;&#x5B58;&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;
+std::ofstream serialize_output_stream(&quot;./serialize_engine_output.bin&quot;,std::ios::out | std::ios::binary);
+serialize_output_stream.write((char*)(trtModelStream-&gt;data()), trtModelStream-&gt;size());
+serialize_output_stream.close();
+
+// &#x4FDD;&#x5B58;&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;
+std::stringstream gieModelStream;
+gieModelStream.seekg(0, gieModelStream.beg);
+std::ofstream outFile;
+outFile.open(&quot;./serialize_engine_output.bin&quot;);
+outFile &lt;&lt; gieModelStream.rdbuf();
+outFile.close();
+
+// &#x4FDD;&#x5B58;&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;
+std::string serialize_str;
+std::ofstream serialize_output_stream;
+serialize_str.resize(trtModelStream-&gt;size());
+memcpy((void*)serialize_str.data(), trtModelStream-&gt;data(), trtModelStream-&gt;size());
+serialize_output_stream.open(&quot;./serialize_engine_output.bin&quot;);
+serialize_output_stream &lt;&lt; serialize_str;
+serialize_output_stream.close();
+</code></pre></li>
+<li><p>2.9&#x3001;&#x63A8;&#x7406;&#x5668;&#x6784;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x9500;&#x6BC1;&#x6784;&#x5EFA;&#x5668;&#x3001;</p>
+<pre><code> builder-&gt;destroy();
+ shutdownProtobufLibrary();
+</code></pre></li>
+</ul>
+<h2 id="3&#x3001;&#x90E8;&#x7F72;&#x63A8;&#x7406;&#x5668;">3&#x3001;&#x90E8;&#x7F72;&#x63A8;&#x7406;&#x5668;</h2>
+<ul>
+<li><p>3.1&#x3001;&#x521B;&#x5EFA;&#x63A8;&#x7406;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x5BF9;&#x8C61;</p>
+<pre><code>IRuntime* runtime = createInferRuntime(gLogger.getTRTLogger());
+</code></pre></li>
+<li><p>3.2&#x3001;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x751F;&#x6210;&#x63A8;&#x7406;&#x5F15;&#x64CE;</p>
+<ul>
+<li><p>3.2.1&#x3001;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x6587;&#x4EF6;&#xFF0C;&#x521B;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;</p>
+<p>&#x200B;</p>
+<pre><code>engine = runtime-&gt;deserializeCudaEngine(trtModelStream-&gt;data(), trtModelStream-&gt;size(), nullptr);
+assert(engine != nullptr);
+trtModelStream-&gt;destroy();
+// trtModelStream&#x662F;IHostMemory*&#x4E3B;&#x673A;&#x7684;&#x5185;&#x5B58;&#x6307;&#x9488;&#x5BF9;&#x8C61;
+</code></pre></li>
+<li><p>3.2.2&#x3001;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;plan&#x5E8F;&#x5217;&#x5316;&#x6587;&#x4EF6;&#xFF0C;&#x521B;&#x5EFA;&#x63A8;&#x7406;&#x5F15;&#x64CE;</p>
+<p>&#x200B;</p>
+<pre><code>// &#x65B9;&#x6CD5;&#x4E00;&#xFF1A;
+std::fstream plan_file;
+plan_file.open(&quot;./serialize_engine_output.bin&quot;, ios::binary | ios::in);
+if (!plan_file.is_open()){
+    gLogInfo &lt;&lt; &quot;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x5931;&#x8D25;&quot; &lt;&lt; std::endl;
+}
+plan_file.seekg(0, ios::end);
+int  length = plan_file.tellg();
+plan_file.seekg(0, ios::beg);
+std::unique_ptr&lt;char[]&gt; data(new char[length]);
+plan_file.read(data.get(), length);
+
+plan_file.close();
+assert(runtime != nullptr);
+engine = runtime-&gt;deserializeCudaEngine(data.get(), length, nullptr);
+assert(engine != nullptr);
+
+// &#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;
+std::string engine_s = &quot;&quot;;
+while (plan_file.peek() != EOF) { // &#x4F7F;&#x7528;fin.peek()&#x9632;&#x6B62;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x65F6;&#x65E0;&#x9650;&#x5FAA;&#x73AF;
+std::stringstream buffer;
+buffer &lt;&lt; plan_file.rdbuf();
+engine_s.append(buffer.str());
+}
+plan_file.close();
+// &#x53CD;&#x5E8F;&#x5217;&#x5316;
+engine = runtime-&gt;deserializeCudaEngine(engine_s.data(), engine_s.size(), nullptr);
+assert(engine != nullptr);
+delete &amp;engine_s;
+</code></pre></li>
+</ul>
+</li>
+<li><p>3.3&#x3001;&#x521B;&#x5EFA;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x63A8;&#x7406;&#x3002;</p>
+<pre><code>  IExecutionContext* context = engine-&gt;createExecutionContext();
+  assert(context != nullptr);
+</code></pre></li>
+<li><p>3.4&#x3001;&#x6267;&#x884C;&#x63A8;&#x7406;</p>
+<pre><code>// &#x5F85;&#x5B8C;&#x6210;
+</code></pre></li>
+<li><p>3.5&#x3001;&#x5220;&#x9664;&#x63A8;&#x7406;&#x5668;&#x5BF9;&#x8C61;&#x548C;&#x6267;&#x884C;&#x5BF9;&#x8C61;</p>
+<pre><code>context-&gt;destroy();
+engine-&gt;destroy();
+runtime-&gt;destroy();
+gLogger.reportTest(sampleTest, pass);
+</code></pre></li>
+</ul>
+<h2 id="4&#x3001;&#x6548;&#x679C;&#x6D4B;&#x8BD5;">4&#x3001;&#x6548;&#x679C;&#x6D4B;&#x8BD5;</h2>
+<p>&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x56FE;&#x7247;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;3*300*300&#x7684;ppm&#x683C;&#x5F0F;&#x56FE;&#x7247;</p>
+<ul>
+<li>&#x7248;&#x672C;&#xFF1A;cuda-10.0 cudnn-7.5.0 TensorRT-5.1.2.2 TensorFlow-1.14.0 GPU-GTX1080 &#xFF08;8G&#xFF09;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">batchsize\params</th>
+<th style="text-align:center">inference time</th>
+<th style="text-align:center">confidence</th>
+<th style="text-align:center">memory use</th>
+<th style="text-align:center">precision(&#x7CBE;&#x5EA6;)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5.93541 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">340M</td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">8.97932 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">410M</td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">10.1746 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">420M</td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">11.8467 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">435M</td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">14.3011 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">16.4168 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">fp16</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x7248;&#x672C;&#xFF1A;cuda-10.0 cudnn-7.5.0 TensorRT-5.1.2.2 TensorFlow-1.14.0 GPU-GTX1080 &#xFF08;8G&#xFF09;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">batchsize\params</th>
+<th style="text-align:center">inference time</th>
+<th style="text-align:center">confidence</th>
+<th style="text-align:center">memory use</th>
+<th style="text-align:center">precision(&#x7CBE;&#x5EA6;)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5.93255 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">340M</td>
+<td style="text-align:center">fp32</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">8.97932 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">410M</td>
+<td style="text-align:center">fp32</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">11.0913 ms</td>
+<td style="text-align:center">89.001</td>
+<td style="text-align:center">420M</td>
+<td style="text-align:center">fp32</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">12.0769 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">440M</td>
+<td style="text-align:center">fp32</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">14.7830 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">fp32</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">16.4221 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">18.4453 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">19.2093 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">21.163 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">23.1207 ms</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5BF9;&#x4E8E;fp32&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;batchsize&#x6BCF;&#x589E;&#x52A0;&#x4E00;&#xFF0C;&#x65F6;&#x95F4;&#x5E73;&#x5747;&#x589E;&#x52A0;2.3ms</strong></p>
+<h2 id="5&#x3001;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x53CA;&#x95EE;&#x9898;&#x7684;&#x5206;&#x6790;">5&#x3001;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x53CA;&#x95EE;&#x9898;&#x7684;&#x5206;&#x6790;</h2>
+<h3 id="51&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x652F;&#x6301;">5.1&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x652F;&#x6301;</h3>
+<p>&#x5F53;&#x5728;&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6307;&#x5B9A;&#x5176;&#x6267;&#x884C;&#x7CBE;&#x5EA6;&#xFF0C;&#x7CBE;&#x5EA6;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;int8&#xFF0C;fp16&#xFF0C;fp32.&#x4F46;&#x662F;&#x4F1A;&#x53D1;&#x73B0; &#xFF0C;&#x5728;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x7CBE;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#x5728;&#x4E0D;&#x540C;&#x7684;GPU&#x4E2D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x4E0D;&#x540C;GPU&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#x533A;&#x522B;&#xFF0C;&#x5BF9;&#x4E8E;GTX1080,RTX2080&#x7B49;GPU&#x53EA;&#x652F;&#x6301;32&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x8FD0;&#x7B97;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;int8&#x7C7B;&#x578B;&#x7684;&#x4F1A;&#x62A5;&#x5982;&#x4E0B;&#x56FE;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;fp16&#xFF0C;&#x548C;fp32&#x7684;&#x8FDB;&#x5EA6;&#x7684;&#x6548;&#x679C;&#x4F1A;&#x662F; &#x4E00;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x53EA;&#x652F;&#x6301;fp32&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x4E0D;&#x7BA1;&#x6307;&#x5B9A;&#x7684;&#x662F;fp16&#x8FD8;&#x662F;fp32&#x5B83;&#x90FD; &#x6309;&#x7167;fp32&#x6765;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x3002;</p>
+<p><img src="../../Image/&#x4E13;&#x4E1A;&#x6280;&#x80FD;/TensorRT/int8&#x62A5;&#x9519;.png" alt=""></p>
+<h3 id="52&#x3001;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x9884;&#x5904;&#x7406;">5.2&#x3001;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x9884;&#x5904;&#x7406;</h3>
+<p>&#x5728;TensorRT&#x4E2D;&#x9700;&#x8981;&#x5BF9;&#x63A8;&#x7406;&#x5668;&#x5B9A;&#x4E49;&#x5176;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#xFF0C;&#x5728;&#x5B9A;&#x4E49;&#x597D;&#x5176;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x5165;&#x8FDB;&#x63A8;&#x7406;&#x5668;&#x7684;&#x6570;&#x636E;&#x5FC5;&#x987B;&#x6309;&#x7167;&#x5B9A;&#x4E49;&#x7684;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x8F93;&#x5165;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#x7684;SSD&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5B9A;&#x4E49;&#x597D;&#x4E86;&#x5176;&#x8F93;&#x5165;&#x4E3A;3*300*300&#x7684;ppm&#x683C;&#x5F0F;&#x56FE;&#x7247;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x8F93;&#x5165;&#x4E0D;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7684;&#x56FE;&#x7247;&#x65F6;&#xFF0C;&#x4FBF;&#x4F1A;&#x62A5;&#x9519;&#x51FA;&#x73B0;&#x6307;&#x9488;&#x8D8A;&#x754C;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x8F93;&#x5165;&#x6570;&#x636E;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<p><img src="../../Image/&#x4E13;&#x4E1A;&#x6280;&#x80FD;/TensorRT/ssd_input.png" alt=""></p>
+<p>&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E0D;&#x89C4;&#x8303;&#x5BFC;&#x81F4;&#x6307;&#x9488;&#x8D8A;&#x754C;&#xFF1A;</p>
+<p><img src="../../Image/&#x4E13;&#x4E1A;&#x6280;&#x80FD;/TensorRT/input_error.png" alt=""></p>
+<h3 id="53&#x3001;windows&#x4E0B;&#x7684;&#x63A8;&#x7406;&#x90E8;&#x7F72;&#x9636;&#x6BB5;&#x7684;&#x95EE;&#x9898;">5.3&#x3001;windows&#x4E0B;&#x7684;&#x63A8;&#x7406;&#x90E8;&#x7F72;&#x9636;&#x6BB5;&#x7684;&#x95EE;&#x9898;</h3>
+<p>windows&#x4E0B;&#x51FA;&#x73B0;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x63A8;&#x7406;&#x6784;&#x5EFA;&#xFF0C;&#x5728;&#x5C06;&#x6784;&#x5EFA;&#x7684;&#x5F15;&#x64CE;&#x8FDB;&#x884C;&#x8FD0;&#x884C;&#x63A8;&#x7406;&#x3002;&#x4F46;&#x662F;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x73B0;&#x8C61;&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x5F15;&#x64CE;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF0C;&#x4FDD;&#x5B58;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x5728;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x90E8;&#x7F72;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x7684;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x52A0;&#x8F7D;&#x5E8F;&#x5217;&#x5316;&#x6587;&#x4EF6;&#x5931;&#x8D25;&#x7684;&#x73B0;&#x8C61;&#xFF0C;&#x8981;&#x4E48;&#x7A0B;&#x5E8F;&#x76F4;&#x63A5;&#x4E2D;&#x65AD;&#xFF0C;&#x8981;&#x4E48;&#x7A0B;&#x5E8F;&#x62A5;&#x544A;&#x8BF4;&#x4E3A;&#x7A7A;&#x7684;&#x63A8;&#x7406;&#x5F15;&#x64CE;&#x6307;&#x9488;&#xFF0C;&#x6216;&#x8005;&#x6307;&#x9488;&#x8D8A;&#x754C;&#x3002;</p>
+<p><img src="../../Image/&#x4E13;&#x4E1A;&#x6280;&#x80FD;/TensorRT/window&#x4E2D;&#x65AD;.png" alt=""></p>
+<h3 id="54&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5C42;&#x7684;&#x63D2;&#x4EF6;&#x95EE;&#x9898;">5.4&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5C42;&#x7684;&#x63D2;&#x4EF6;&#x95EE;&#x9898;</h3>
+<h3 id="55&#x3001;tensorrt&#x8FD0;&#x884C;&#x7CBE;&#x5EA6;&#x95EE;&#x9898;">5.5&#x3001;TensorRT&#x8FD0;&#x884C;&#x7CBE;&#x5EA6;&#x95EE;&#x9898;</h3>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="核心API介绍.html" class="navigation navigation-prev " aria-label="Previous page: 第三章：核心API介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="遇到的问题和解决方法.html" class="navigation navigation-next " aria-label="Next page: 第五章：安装部署及遇到的问题和解决方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第四章：编程流程及使用","level":"1.4.1.4","depth":3,"next":{"title":"第五章：安装部署及遇到的问题和解决方法","level":"1.4.1.5","depth":3,"path":"Professional_Skills/TensorRT/遇到的问题和解决方法.md","ref":"Professional_Skills/TensorRT/遇到的问题和解决方法.md","articles":[]},"previous":{"title":"第三章：核心API介绍","level":"1.4.1.3","depth":3,"path":"Professional_Skills/TensorRT/核心API介绍.md","ref":"Professional_Skills/TensorRT/核心API介绍.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Professional_Skills/TensorRT/编程流程及使用.md","mtime":"2019-08-02T02:16:55.317Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-08T05:06:57.454Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
