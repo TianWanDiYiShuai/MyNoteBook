@@ -309,3 +309,113 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
   &emsp;&emsp;cudaMemcpy的调用会导致主机运行阻塞。cudaMemcpyDeviceToHost的作用就是将存储在GPU上的数组d_c中的结果复制到gpuRef中。
 
   **注意：主机与设备之间的内存拷贝，一定要用cudaMemcpy函数。如果运用gpuRef = d_C则程序在运行时将会直接奔溃。**
+
+## 2.3、线程管理
+
+&emsp;&emsp;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程 
+
+并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部 
+
+分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结 
+
+构，由线程块和线程块网格构成，如下图所示。 
+
+![](/Image/专业技能/CUDA/GPU线程抽象.jpg)
+
+&emsp;&emsp;由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同 
+
+的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内 
+
+的线程协作可以通过**同步、共享内存**来实现。 
+
+**不同块内的线程不能协作。 **
+
+可以通过以下变量来区分线程块及线程
+
+```
+blockIdx.x
+blockIdx.y
+blockIdx.z
+threadIdx.x
+threadIdx.y
+threadIdx.z
+```
+
+&emsp;&emsp;CUDA可以组织三维的网格和块。上图展示了一个线程层次结构的示例，其结构是 
+
+一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。 
+
+- blockDim（线程块的维度，用每个线程块中的线程数来表示） 
+- gridDim（线程格的维度，用每个线程格中的线程数来表示） 
+
+&emsp;&emsp;它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个 
+
+dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以 
+
+通过它的x、y、z字段获得。如下所示。
+
+```
+blockDIm.x
+blockDIm.y
+blockDIm.z
+```
+
+- 检查网格、线程块的维度信息
+
+```
+#include "../common/common.h"
+#include <cuda_runtime.h>
+#include <stdio.h>
+
+/*
+ * Display the dimensionality of a thread block and grid from the host and
+ * device.
+ */
+
+__global__ void checkIndex(void)
+{
+    printf("threadIdx:(%d, %d, %d)\n", threadIdx.x, threadIdx.y, threadIdx.z);
+    printf("blockIdx:(%d, %d, %d)\n", blockIdx.x, blockIdx.y, blockIdx.z);
+
+    printf("blockDim:(%d, %d, %d)\n", blockDim.x, blockDim.y, blockDim.z);
+    printf("gridDim:(%d, %d, %d)\n", gridDim.x, gridDim.y, gridDim.z);
+
+}
+
+int main(int argc, char **argv)
+{
+    // define total data element
+    int nElem = 6;
+
+    // define grid and block structure
+    dim3 block(3);
+    dim3 grid((nElem + block.x - 1) / block.x);
+
+    // check grid and block dimension from host side
+    printf("grid.x %d grid.y %d grid.z %d\n", grid.x, grid.y, grid.z);
+    printf("block.x %d block.y %d block.z %d\n", block.x, block.y, block.z);
+
+    // check grid and block dimension from device side
+    checkIndex<<<grid, block>>>();
+
+    // reset device before you leave
+    CHECK(cudaDeviceReset());
+
+    return(0);
+}
+```
+
+- 输出结果
+
+![](/Image/专业技能/CUDA/程序输出结果1.jpg)
+
+**对于一个给定的数据大小，确定网格和块尺寸的一般步骤为： **
+
+- 确定块的大小 
+- 在已知数据大小和块大小的基础上计算网格维度
+
+要确定块尺寸，通常需要考虑： 
+
+- 内核的性能特性 
+- GPU资源的限制 
+
