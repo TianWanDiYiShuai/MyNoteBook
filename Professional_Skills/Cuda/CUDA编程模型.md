@@ -25,7 +25,7 @@ CUDA编程模型使用由C语言扩展生成的注释代码在异构计算系统
 
 ## 2.2、内存管理
 
-  在CUDA编程中，对于内存的管理分为对主机内存的管理，和对设备的内存的管理。
+在CUDA编程中，对于内存的管理分为对主机内存的管理，和对设备的内存的管理。
 
 相关主机和设备的内存函数：
 
@@ -46,11 +46,11 @@ cudaError_t cudaMemcpy (void* dst,const void* src,size_t count, cudaMemcpyKind k
 * [ ] cudaMemcpyDeviceToHost
 * [ ] cudaMemcpyDeviceToDevice
 
-&emsp;&emsp;这个函数以同步方式执行，因为在cudaMemcpy函数返回以及传输操作完成之前主机 
+  这个函数以同步方式执行，因为在cudaMemcpy函数返回以及传输操作完成之前主机
 
-应用程序是阻塞的。除了内核启动之外的CUDA调用都会返回一个错误的枚举类型cuda 
+应用程序是阻塞的。除了内核启动之外的CUDA调用都会返回一个错误的枚举类型cuda
 
-Error_t。如果GPU内存分配成功，函数返回： 
+Error\_t。如果GPU内存分配成功，函数返回：
 
 `cudaErrorMemoryAllocation`
 
@@ -58,89 +58,88 @@ Error_t。如果GPU内存分配成功，函数返回：
 
 `cudaErrorMemoryAlloction`
 
-可以使用以下CUDA运行时函数将错误代码转化为可读的错误消息： 
+可以使用以下CUDA运行时函数将错误代码转化为可读的错误消息：
 
 `char* cudaGetErrorString(cudaError_t error)`
 
-cudaGetErrorString函数和C语言中的strerror函数类似。 
+cudaGetErrorString函数和C语言中的strerror函数类似。
 
 ---
 
-CUDA编程模型从GPU架构中抽象出一个内存层次结构。图下所示的是一个简化的 
+CUDA编程模型从GPU架构中抽象出一个内存层次结构。图下所示的是一个简化的
 
 GPU内存结构，它主要包含两部分：全局内存和共享内存。
 
 ![](/Image/专业技能/CUDA/cuda抽象内存模型.jpg)
 
-&emsp;&emsp;全局内存类似于CPU的系统内存，而共享内存类似于CPU的缓存。然而GPU的共享内存可以由CUDA 的内核直接控制。
+  全局内存类似于CPU的系统内存，而共享内存类似于CPU的缓存。然而GPU的共享内存可以由CUDA 的内核直接控制。
 
 **对比例子--矩阵相加：**
 
-- CPU上计算
+* CPU上计算
 
   ```
   #include <stdlib.h>
   #include <time.h>
-  
+
   /*
    * This example demonstrates a simple vector sum on the host. sumArraysOnHost
    * sequentially iterates through vector elements on the host.
    */
-  
+
   void sumArraysOnHost(float *A, float *B, float *C, const int N)
   {
       for (int idx = 0; idx < N; idx++)
       {
           C[idx] = A[idx] + B[idx];
       }
-  
+
   }
-  
+
   void initialData(float *ip, int size)
   {
       // generate different seed for random number
       time_t t;
       srand((unsigned) time(&t));
-  
+
       for (int i = 0; i < size; i++)
       {
           ip[i] = (float)(rand() & 0xFF) / 10.0f;
       }
-  
+
       return;
   }
-  
+
   int main(int argc, char **argv)
   {
       int nElem = 1024;
       size_t nBytes = nElem * sizeof(float);
-  
+
       float *h_A, *h_B, *h_C;
       h_A = (float *)malloc(nBytes);
       h_B = (float *)malloc(nBytes);
       h_C = (float *)malloc(nBytes);
-  
+
       initialData(h_A, nElem);
       initialData(h_B, nElem);
-  
+
       sumArraysOnHost(h_A, h_B, h_C, nElem);
-  
+
       free(h_A);
       free(h_B);
       free(h_C);
-  
+
       return(0);
   }
-  
   ```
 
-- GPU上计算
+* GPU上计算
 
   ```
   #include "../common/common.h"
   #include <cuda_runtime.h>
   #include <stdio.h>
-  
+
   /*
   这个例子在GPU和主机上演示了一个简单的向量和。
   * sumArraysOnGPU将向量和的工作分割到CUDA线程上
@@ -154,7 +153,7 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
   {
       double epsilon = 1.0E-8;
       bool match = 1;
-  
+
       for (int i = 0; i < N; i++)
       {
           if (abs(hostRef[i] - gpuRef[i]) > epsilon)
@@ -166,24 +165,24 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
               break;
           }
       }
-  
+
       if (match) printf("Arrays match.\n\n");
-  
+
       return;
   }
-  
+
   //初始化向量
   void initialData(float *ip, int size)
   {
       // generate different seed for random number
       time_t t;
       srand((unsigned) time(&t));
-  
+
       for (int i = 0; i < size; i++)
       {
           ip[i] = (float)( rand() & 0xFF ) / 10.0f;
       }
-  
+
       return;
   }
   // 在主机设备进行向量计算
@@ -198,14 +197,14 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
   __global__ void sumArraysOnGPU(float *A, float *B, float *C, const int N)
   {
       int i = blockIdx.x * blockDim.x + threadIdx.x;
-  
+
       if (i < N) C[i] = A[i] + B[i];
   }
-  
+
   int main(int argc, char **argv)
   {
       printf("%s Starting...\n", argv[0]);
-  
+
       // 设置GPU的使用编号
       int dev = 0;
       // GPU设备的信息对象
@@ -215,22 +214,22 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
       printf("Using Device %d: %s\n", dev, deviceProp.name);
       //设置使用的GPU
       CHECK(cudaSetDevice(dev));
-  
+
       // 设置vectors的大小
       int nElem = 1 << 24;
       printf("Vector size %d\n", nElem);
-  
+
       // 主机内存分配大小
       size_t nBytes = nElem * sizeof(float);
-  
+
       float *h_A, *h_B, *hostRef, *gpuRef;
       h_A     = (float *)malloc(nBytes);
       h_B     = (float *)malloc(nBytes);
       hostRef = (float *)malloc(nBytes);
       gpuRef  = (float *)malloc(nBytes);
-  
+
       double iStart, iElaps;
-  
+
       // 初始化主机端内存数据
       iStart = seconds();
       initialData(h_A, nElem);
@@ -239,24 +238,24 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
       printf("initialData Time elapsed %f sec\n", iElaps);
       memset(hostRef, 0, nBytes);
       memset(gpuRef,  0, nBytes);
-  
+
       // 在主机端进行向量的计算
       iStart = seconds();
       sumArraysOnHost(h_A, h_B, hostRef, nElem);
       iElaps = seconds() - iStart;
       printf("sumArraysOnHost Time elapsed %f sec\n", iElaps);
-  
+
       // 分配GPU端内存
       float *d_A, *d_B, *d_C;
       CHECK(cudaMalloc((float**)&d_A, nBytes));
       CHECK(cudaMalloc((float**)&d_B, nBytes));
       CHECK(cudaMalloc((float**)&d_C, nBytes));
-  
+
       // 将主机端的内存数据拷贝到GPU端的全局内存区
       CHECK(cudaMemcpy(d_A, h_A, nBytes, cudaMemcpyHostToDevice));
       CHECK(cudaMemcpy(d_B, h_B, nBytes, cudaMemcpyHostToDevice));
       CHECK(cudaMemcpy(d_C, gpuRef, nBytes, cudaMemcpyHostToDevice));
-  
+
       // 在主机端调用核函数
       /*
       当数据被转移到GPU的全局内存后，主机端调用核函数在GPU上进行数组求和。一旦 内核被调用，控制权立刻被传回主机，这样的话，当核函数在GPU上运行时，主机可以执 行其他函数。因此，内核与主机是异步的。
@@ -264,7 +263,7 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
       int iLen = 512;
       dim3 block (iLen);
       dim3 grid  ((nElem + block.x - 1) / block.x);
-  
+
       iStart = seconds();
       sumArraysOnGPU<<<grid, block>>>(d_A, d_B, d_C, nElem);
       CHECK(cudaDeviceSynchronize());
@@ -272,61 +271,60 @@ GPU内存结构，它主要包含两部分：全局内存和共享内存。
       iElaps = seconds() - iStart;
       printf("sumArraysOnGPU <<<  %d, %d  >>>  Time elapsed %f sec\n", grid.x,
              block.x, iElaps);
-  
+
       // 检查核函数是否有错误
       CHECK(cudaGetLastError()) ;
-  
+
       // 将GPU端的计算结构拷贝到主机端
       CHECK(cudaMemcpy(gpuRef, d_C, nBytes, cudaMemcpyDeviceToHost));
-  
+
       // 检查计算的结果
       checkResult(hostRef, gpuRef, nElem);
-  
+
       // 释放设备端的内存
       CHECK(cudaFree(d_A));
       CHECK(cudaFree(d_B));
       CHECK(cudaFree(d_C));
-  
+
       // 释放主机端的内存
       free(h_A);
       free(h_B);
       free(hostRef);
       free(gpuRef);
-  
+
       return(0);
   }
-  
   ```
 
-  &emsp;&emsp;当数据被转移到GPU的全局内存后，主机端调用核函数在GPU上进行数组求和。一旦 内核被调用，控制权立刻被传回主机，这样的话，当核函数在GPU上运行时，主机可以执 行其他函数。因此，内核与主机是异步的。 
+    当数据被转移到GPU的全局内存后，主机端调用核函数在GPU上进行数组求和。一旦 内核被调用，控制权立刻被传回主机，这样的话，当核函数在GPU上运行时，主机可以执 行其他函数。因此，内核与主机是异步的。
 
-  &emsp;&emsp;当内核在GPU上完成了对所有数组元素的处理后，其结果将以数组d_C的形式存储在 
+    当内核在GPU上完成了对所有数组元素的处理后，其结果将以数组d\_C的形式存储在
 
   GPU的全局内存中，然后用cudaMemcpy函数把结果从GPU复制回到主机的数组gpuRef中。
 
   `cudaMemcpy(gpuRef, d_C, nBytes, cudaMemcpyDeviceToHost)`
 
-  &emsp;&emsp;cudaMemcpy的调用会导致主机运行阻塞。cudaMemcpyDeviceToHost的作用就是将存储在GPU上的数组d_c中的结果复制到gpuRef中。
+    cudaMemcpy的调用会导致主机运行阻塞。cudaMemcpyDeviceToHost的作用就是将存储在GPU上的数组d\_c中的结果复制到gpuRef中。
 
-  **注意：主机与设备之间的内存拷贝，一定要用cudaMemcpy函数。如果运用gpuRef = d_C则程序在运行时将会直接奔溃。**
+  **注意：主机与设备之间的内存拷贝，一定要用cudaMemcpy函数。如果运用gpuRef = d\_C则程序在运行时将会直接奔溃。**
 
 ## 2.3、线程管理
 
-&emsp;&emsp;当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程 
+  当核函数在主机端启动时，它的执行会移动到设备上，此时设备中会产生大量的线程
 
-并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部 
+并且每个线程都执行由核函数指定的语句。了解如何组织线程是CUDA编程的一个关键部
 
-分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结 
+分。CUDA明确了线程层次抽象的概念以便于你组织线程。这是一个两层的线程层次结
 
-构，由线程块和线程块网格构成，如下图所示。 
+构，由线程块和线程块网格构成，如下图所示。
 
 ![](/Image/专业技能/CUDA/GPU线程抽象.jpg)
 
-&emsp;&emsp;由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同 
+  由一个内核启动所产生的所有线程统称为一个网格。同一网格中的所有线程共享相同
 
-的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内 
+的全局内存空间。一个网格由多个线程块构成，一个线程块包含一组线程，同一线程块内
 
-的线程协作可以通过**同步、共享内存**来实现。 
+的线程协作可以通过**同步、共享内存**来实现。
 
 **不同块内的线程不能协作。 **
 
@@ -341,16 +339,16 @@ threadIdx.y
 threadIdx.z
 ```
 
-&emsp;&emsp;CUDA可以组织三维的网格和块。上图展示了一个线程层次结构的示例，其结构是 
+  CUDA可以组织三维的网格和块。上图展示了一个线程层次结构的示例，其结构是
 
-一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。 
+一个包含二维块的二维网格。网格和块的维度由下列两个内置变量指定。
 
-- blockDim（线程块的维度，用每个线程块中的线程数来表示） 
-- gridDim（线程格的维度，用每个线程格中的线程数来表示） 
+* blockDim（线程块的维度，用每个线程块中的线程数来表示） 
+* gridDim（线程格的维度，用每个线程格中的线程数来表示） 
 
-&emsp;&emsp;它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个 
+  它们是dim3类型的变量，是基于uint3定义的整数型向量，用来表示维度。当定义一个
 
-dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以 
+dim3类型的变量时，所有未指定的元素都被初始化为1。dim3类型变量中的每个组件可以
 
 通过它的x、y、z字段获得。如下所示。
 
@@ -360,7 +358,7 @@ blockDIm.y
 blockDIm.z
 ```
 
-- 检查网格、线程块的维度信息
+* 检查网格、线程块的维度信息
 
 ```
 #include "../common/common.h"
@@ -405,17 +403,19 @@ int main(int argc, char **argv)
 }
 ```
 
-- 输出结果
+* 输出结果
 
 ![](/Image/专业技能/CUDA/程序输出结果1.jpg)
 
 **对于一个给定的数据大小，确定网格和块尺寸的一般步骤为： **
 
-- 确定块的大小 
-- 在已知数据大小和块大小的基础上计算网格维度
+* 确定块的大小 
+* 在已知数据大小和块大小的基础上计算网格维度
 
-要确定块尺寸，通常需要考虑： 
+要确定块尺寸，通常需要考虑：
 
-- 内核的性能特性 
-- GPU资源的限制 
+* 内核的性能特性 
+* GPU资源的限制 
+
+
 
