@@ -41,6 +41,13 @@ cudaError_t cudaMemcpy (void* dst,const void* src,size_t count, cudaMemcpyKind k
 
 由kind指定，其中的kind有以下几种。
 
-* [ ] 
+* [ ] cudaMemcpyHostToHost
+
+* [ ] cudaMemcpyHostTODevice
+
+* [ ] cudaMemcpyDeviceToHost
+
+* [ ] cudaMemcpyDeviceToDevice
+
 
 
