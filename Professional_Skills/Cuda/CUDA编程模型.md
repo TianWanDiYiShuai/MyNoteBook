@@ -417,5 +417,9 @@ int main(int argc, char **argv)
 * 内核的性能特性 
 * GPU资源的限制 
 
+## 2.4、启动一个CUDA核函数
+
+
+
 
 
