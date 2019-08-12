@@ -40,5 +40,5 @@ NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易�
 
 * 深度学习计算流程图
 
-![](/Image/专业技能/CUDA/CUDA编程结构.jpg)
+![](/Image/专业技能/CUDA/CUDA编程结构.jpg)                                                                                                                              
 
