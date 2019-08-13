@@ -174,6 +174,7 @@ universe安装成功
 
 ## 测试 Gym 和 Universe
 1. **测试代码一**
+
 ```
 # -*- coding: utf-8 -*-
 # wh
@@ -246,6 +247,7 @@ while True:
 
     env.render()
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190430151245175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4Mjc3NTY1,size_16,color_FFFFFF,t_70)
 2.**测试代码二**
 
@@ -321,6 +323,7 @@ while True:
 
     env.render()
 ```
+
 **在执行这个代码的时候会从Docker hub上下载容器所以会很慢**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190430164243516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4Mjc3NTY1,size_16,color_FFFFFF,t_70)
 结果:
