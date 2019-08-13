@@ -104,7 +104,7 @@ sudo reboot
 	 	`` sudo apt-get update``
  	- 安装依赖软件库
 	 	```
-	 	sudo apt-get install golang python3-dev python-dev libcupti-dev libjpeg-turbo8-dev make tmux htop chromium-browser git cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
+	sudo apt-get install golang python3-dev python-dev libcupti-dev libjpeg-turbo8-dev make tmux htop chromium-browser git cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
 	```
 	 	**如果是 Ubuntu 14.04，则略有不同，还需要运行以下命令：**
 	 	`sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable`
