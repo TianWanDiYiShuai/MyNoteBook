@@ -82,10 +82,23 @@
 ### 3.4、**回归器修正box偏差**
 
 &emsp;&emsp;候选区域经过SVM打分之后，需要经过回归器进行修正，修正的目的是得到一个新的bounding box，新的bounding box预测的偏差减小，文中使用的回归器修正启发于deformable part models（DPM），而且回归是基于每个特定类的。具体来说给定预测的bounding box和ground truth的集合$$(P_i,G_i)i=1,...,N$$，其中$$P^i=(p^i_x,p^i_y,p^i_w,p^i_h)，G^i=(g^i_x,g^i_y,g^i_w,g^i_h)$$，x,y,w,h分别表示左上角的坐标以及box的宽和高，修正的目的是把PP变换到预测的ground truthG^，变换的的函数有四个分别是$$d_x(P),d_y(P),d_w(P),d_h(P)$$，变换的具体公式如下：
+$$
+\hat{G}_x=P_wd_x(P)+P_x
+$$
 
+$$
+\hat{G}_y=P_hd_y(P)+P_y
+$$
 
+$$
+\hat{G}_w=P_wexp(d_w(P))
+$$
 
+$$
+\hat{G}_h=P_hexp(d_h(P))
+$$
 
+这里的四个$$d_x(P),d_y(P)d_w(P),d_h(P)$$由CNN最后一层的pooling层的特征经过线性变换得到：$$d∗(P)=w^T_∗∅(P)$$，因此这里我们需要学习的参数变成$$w_∗$$，此问题可以看成是一个标准的岭回归问题：
 
-
+![](/Image/算法/深度学习/深度学习应用算法/IOU回归.jpg)
 
