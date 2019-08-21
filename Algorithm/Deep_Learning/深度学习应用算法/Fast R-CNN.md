@@ -51,7 +51,7 @@ ROIs Pooling是Pooling层的一种，而且是针对RoIs\(Region of Interest,特
 
 #### 1.1.2、训练样本
 
-  训练过程中每个mini-batch包含2张图像和128个region proposal（即ROI，64个ROI/张），其中大约25%的ROI和ground truth的IOU值大于0.5（即正样本），且只通过随机水平翻转进行数据增强。Fast-RCNN测试.jpg
+训练过程中每个mini-batch包含2张图像和128个region proposal（即ROI，64个ROI/张），其中大约25%的ROI和ground truth的IOU值大于0.5（即正样本），且只通过随机水平翻转进行数据增强。Fast-RCNN测试.jpg
 
 #### 1.1.3、损失函数
 
@@ -62,6 +62,10 @@ ROIs Pooling是Pooling层的一种，而且是针对RoIs\(Region of Interest,特
 ![](/Image/算法/深度学习/深度学习应用算法/Fast-RCNN测试.jpg)
 
 ## 2、总结
+
+* 直接将原图输入CNN进行特征检查
+* 将候选框与特征图进行映射
+* 采用Rol Pooling池化
 
 
 
