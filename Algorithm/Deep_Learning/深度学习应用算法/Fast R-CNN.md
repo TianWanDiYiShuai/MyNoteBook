@@ -14,7 +14,7 @@
 
 * 输入224×224的固定大小图片
 * 候选框提取：与RCNN相同使用Selective Search提取候选框，
-* 将提取出来的候选框归一化到固定大小，然后作用于CNN，CNN网络为5个卷积层+2个降采样层（分别跟在第一和第二个卷积层后面）
+* 将提取出来的候选框归一化到固定大小，然后作用于CNN，CNN网络为5个卷积层+2个降采样层（分别跟在第一和第二个卷积层后面，或者为VGG16）
 * 提取出的特征张量，假设其保留了原图片的空间位置信息，将候选框做对应变换后映射到特征张量上，提取出大小不同的候选区域的特征张量（region proposal个数大约为2000个）。
 * 对于每个候选区域的特征张量，使用RoI pooling层将其大小归一化
 * 经过全连接层提取固定长度的特征向量（两个output都为4096维的全连接层）
@@ -22,7 +22,7 @@
 
 #### 1.1.1、ROIPooling
 
-  ROIs Pooling是Pooling层的一种，而且是针对RoIs\(Region of Interest,特征图上的框\)的Pooling，他的特点是**输入特征图**尺寸不固定，但是**输出特征图**尺寸固定；
+ROIs Pooling是Pooling层的一种，而且是针对RoIs\(Region of Interest,特征图上的框\)的Pooling，他的特点是**输入特征图**尺寸不固定，但是**输出特征图**尺寸固定；
 
 * 在Fast RCNN中， RoI是指Selective Search完成后得到的“候选框”在特征图上的映射
 
@@ -41,7 +41,7 @@
 * 将映射后的区域划分为相同大小的sections（sections数量与输出的维度相同）；
 * 对每个sections进行max pooling操作
 
-  先把roi中的坐标映射到feature map上，映射规则比较简单，就是把各个坐标除以“输入图片与feature map的大小的比值”，得到了feature map上的box坐标后，我们使用Pooling得到输出；由于输入的图片大小不一，所以这里我们使用的类似Spp Pooling，在Pooling的过程中需要计算Pooling后的结果对应到feature map上所占的范围，然后在那个范围中进行取max或者取average。Rol-Pool.jpg
+先把roi中的坐标映射到feature map上，映射规则比较简单，就是把各个坐标除以“输入图片与feature map的大小的比值”，得到了feature map上的box坐标后，我们使用Pooling得到输出；由于输入的图片大小不一，所以这里我们使用的类似Spp Pooling，在Pooling的过程中需要计算Pooling后的结果对应到feature map上所占的范围，然后在那个范围中进行取max或者取average。Rol-Pool.jpg
 
 ![](/Image/算法/深度学习/深度学习应用算法/Rol-Pool.jpg)
 
@@ -49,7 +49,7 @@
 
 #### 1.1.2、训练样本
 
-&emsp;&emsp;训练过程中每个mini-batch包含2张图像和128个region proposal（即ROI，64个ROI/张），其中大约25%的ROI和ground truth的IOU值大于0.5（即正样本），且只通过随机水平翻转进行数据增强。Fast-RCNN测试.jpg
+  训练过程中每个mini-batch包含2张图像和128个region proposal（即ROI，64个ROI/张），其中大约25%的ROI和ground truth的IOU值大于0.5（即正样本），且只通过随机水平翻转进行数据增强。Fast-RCNN测试.jpg
 
 #### 1.1.3、损失函数
 
@@ -60,8 +60,6 @@
 ![](/Image/算法/深度学习/深度学习应用算法/Fast-RCNN测试.jpg)
 
 ## 2、总结
-
-
 
 
 
