@@ -41,6 +41,8 @@
     $$
 
 
+
+
 ### 2、缩放候选区域
 
 - 第一小步：需要对第一阶段中抽取得到的候选区域，经过一个叫做"warp"的过程，这个warp实际就是一个缩放的过程，因为第一步我们提取出的候选区域大小不一，但是后续接入的深度网络的输入是固定的，因此这些区域的大小需要适配CNN网络固定大小的输入；
@@ -84,17 +86,11 @@
 &emsp;&emsp;候选区域经过SVM打分之后，需要经过回归器进行修正，修正的目的是得到一个新的bounding box，新的bounding box预测的偏差减小，文中使用的回归器修正启发于deformable part models（DPM），而且回归是基于每个特定类的。具体来说给定预测的bounding box和ground truth的集合$$(P_i,G_i)i=1,...,N$$，其中$$P^i=(p^i_x,p^i_y,p^i_w,p^i_h)，G^i=(g^i_x,g^i_y,g^i_w,g^i_h)$$，x,y,w,h分别表示左上角的坐标以及box的宽和高，修正的目的是把PP变换到预测的ground truthG^，变换的的函数有四个分别是$$d_x(P),d_y(P),d_w(P),d_h(P)$$，变换的具体公式如下：
 $$
 \hat{G}_x=P_wd_x(P)+P_x
-$$
 
-$$
 \hat{G}_y=P_hd_y(P)+P_y
-$$
 
-$$
 \hat{G}_w=P_wexp(d_w(P))
-$$
 
-$$
 \hat{G}_h=P_hexp(d_h(P))
 $$
 
