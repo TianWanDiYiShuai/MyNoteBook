@@ -88,15 +88,11 @@
 $$
 \begin{equation}
 \hat{G}_x=P_wd_x(P)+P_x \\
-
 \hat{G}_y=P_hd_y(P)+P_y \\
-
 \hat{G}_w=P_wexp(d_w(P)) \\
-
 \hat{G}_h=P_hexp(d_h(P))
 \end{equation}
 $$
-
 这里的四个$$d_x(P),d_y(P)d_w(P),d_h(P)$$由CNN最后一层的pooling层的特征经过线性变换得到：$$d∗(P)=w^T_∗∅(P)$$，因此这里我们需要学习的参数变成$$w_∗$$，此问题可以看成是一个标准的岭回归问题：
 
 ![](/Image/算法/深度学习/深度学习应用算法/IOU回归.jpg)
