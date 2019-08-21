@@ -49,6 +49,18 @@
 
 #### 1.1.2、训练样本
 
+&emsp;&emsp;训练过程中每个mini-batch包含2张图像和128个region proposal（即ROI，64个ROI/张），其中大约25%的ROI和ground truth的IOU值大于0.5（即正样本），且只通过随机水平翻转进行数据增强。Fast-RCNN测试.jpg
+
+#### 1.1.3、损失函数
+
+![](/Image/算法/深度学习/深度学习应用算法/Fast-RCNN损失函数.jpg)
+
+### 1.2、测试
+
+![](/Image/算法/深度学习/深度学习应用算法/Fast-RCNN测试.jpg)
+
+## 2、总结
+
 
 
 
