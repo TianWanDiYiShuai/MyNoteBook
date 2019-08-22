@@ -60,6 +60,8 @@ build ---构建平台
 * TensorRT：5.1.6
 * opencv：3.3.1
 
+**TX2中nvidia-smi命令不能使用**
+
 
 
 
