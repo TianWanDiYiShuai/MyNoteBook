@@ -29,13 +29,11 @@ build ---构建平台
 * step2：选择需要的包安装，可以安装的工具有两部分,分别是主机端\(包括cuda,opencv和cuda编程环境\)和target设备端\(包括系统和开发工具\)主机那边如果你已经配置好了开发环境,建议不要勾选,设备那边则全部勾选上\(包括重装系统\)
   选择好以后打上勾同意协议,开始下载安装
 
-
 ![](/Image/专业技能/TensorRT/TX2_step2.jpg)
 
 **注意：这里选择安装的包中，包含安装Ubuntu系统，和cuda、cudnn、TensorRT等两部分，当TX2设备中已经包含Ubuntu系统后，可以不用选择安装jetson os,只需要选择安装其深度学习运行环境。**
 
 ![](/Image/专业技能/TensorRT/TX2_step2.jpg)
-
 
 * step3：下载相关的软件包
 
@@ -51,14 +49,16 @@ build ---构建平台
 
 **安装分为，自动安装和手动安装，自动安装，需要输入设备的ip,账号密码，手动安装，需要ip,账号密码，并手动进入Recovery模式。**
 
-- step4：安装成功，退出。
+* step4：安装成功，退出。
 
 ## 2、安装环境说明
 
+![](/Image/专业技能/TensorRT/TX2版本信息.png)
+
+* cuda ：10.0
+* cudnn：7.5.0
+* TensorRT：5.1.6
+* opencv：3.3.1
 
 
-- cuda ：10.0
-- cudnn：7.5.0
-- TensorRT：5.1.6
-- opencv：
 
