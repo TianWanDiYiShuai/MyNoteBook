@@ -33,7 +33,6 @@ build ---构建平台
 
 **注意：这里选择安装的包中，包含安装Ubuntu系统，和cuda、cudnn、TensorRT等两部分，当TX2设备中已经包含Ubuntu系统后，可以不用选择安装jetson os,只需要选择安装其深度学习运行环境。**
 
-![](/Image/专业技能/TensorRT/TX2_step2.jpg)
 
 * step3：下载相关的软件包
 
