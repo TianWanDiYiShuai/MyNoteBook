@@ -86,4 +86,8 @@
 
 ![](/Image/算法/深度学习/深度学习应用算法/Faster-RCNN后续.jpg)
 
+## 3、训练
+
+- 方法一：先训练RPN，然后使用得到的候选区域训练Fast R-CNN，之后再使用得到的Fast R-CNN中的CNN去初始化RPN的CNN再次训练RPN；
+- 方法二：另一个更为简单的方法，就是end-to-end的训练方法，将RPN和Fast R-CNN结合起来一起训练
 
