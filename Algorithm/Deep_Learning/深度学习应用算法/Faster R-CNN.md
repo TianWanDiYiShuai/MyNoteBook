@@ -58,14 +58,32 @@
 
 - 对于一个大小为H*W的特征层，它上面每一个像素点对应9个anchor,这里有一个重要的参数feat_stride = 16， 它表示特征层上移动一个点，对应原图移动16个像素点(16：因为经过了四次pooling，conv feature map为原图的1/16)
 
-- 把这9个anchor的坐标进行平移操作，获得在原图上的坐标。之后根据ground truth label和这些anchor之间的关系生成rpn_lables
+- 把这9个anchor的坐标进行平移操作，获得在原图上的坐标。之后根据ground truth label和这些anchor之间的关系生成rpn_lables 
 
 - 让得到的卷积特征的每一个位置都负责原图中对应位置9种尺寸的框的检测，检测的目标就是判断框中是否存在一个物体。所以，共有51*39*9种框，这些框就是anchor。
 
   anchor的3种尺寸，每种尺度三个比例,它们的面积分别是128*128，256*256，512*512，每种面积又分为3种长宽比，分别是1：1，1：2，2：1。
 
-- 
+![](/Image/算法/深度学习/深度学习应用算法/9种anchor.jpg)
 
+**我们的方法的一个重要特性是是平移不变性,锚点本身和计算锚点的函数都是平移不变的。如果在图像中平移一个目标，那么proposal也会跟着平移，这时，同一个函数需要能够在任何位置都预测到这个proposal。我们的方法可以保证这种平移不变性。**
 
+- 对anchor的后续处理
+
+  - 去掉超出原图的边界的anchor box
+
+  - 如果anchor box与ground truth的IoU值最大，标记为正样本，label=1
+
+  - 如果anchor box与ground truth的IoU>0.7，标记为正样本，label=1
+
+  - 如果anchor box与ground truth的IoU<0.3，标记为负样本，label=0
+
+    ​     剩下的既不是正样本也不是负样本，不用于最终训练，label=-1
+
+### 2.3、Roi Pooling
+
+**后续与Fast-RCNN类似**
+
+![](/Image/算法/深度学习/深度学习应用算法/Faster-RCNN后续.jpg)
 
 
