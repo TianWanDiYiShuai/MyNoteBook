@@ -35,6 +35,6 @@
 
 ## 2、测试结果及分析
 
+![](/Image/专业技能/TensorRT/yolo_test.jpg)
 
-
-每秒8.3帧左右 yolo_test.jpg
+每秒8.3帧左右 
