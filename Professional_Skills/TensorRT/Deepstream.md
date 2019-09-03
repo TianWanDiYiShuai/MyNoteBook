@@ -19,3 +19,26 @@
 - deepstream中运用到很多的模块，对于TensorRT中，需要运用的是其中的推理模块，它提供了针对TensorRT推理部署的统一接口，使用复杂工厂模式编程实现。
 
 ![](/Image/专业技能/TensorRT/deepstream_lib.jpg)
+
+```
+NvDsInferStatus
+createNvDsInferContext(NvDsInferContextHandle *handle,
+	NvDsInferContextInitParams &initParams, void *userCtx,
+	NvDsInferContextLoggingFunc logFunc)
+{
+	NvDsInferStatus status;
+	NvDsInferContextImpl *ctx = new NvDsInferContextImpl();
+
+	status = ctx->initialize(initParams, userCtx, logFunc);
+	if (status == NVDSINFER_SUCCESS)
+	{
+		*handle = ctx;
+	}
+	else
+	{
+		static_cast<INvDsInferContext *>(ctx)->destroy();
+	}
+	return status;
+}
+```
+
