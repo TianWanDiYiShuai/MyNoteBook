@@ -15,3 +15,7 @@
 - DeepStream输入：本地视频文件（H.264、HEVC等）和 在线视频流，如30 路1080P
 
 ![](/Image/专业技能/TensorRT/deepstream流程.jpg)
+
+- deepstream中运用到很多的模块，对于TensorRT中，需要运用的是其中的推理模块，它提供了针对TensorRT推理部署的统一接口，使用复杂工厂模式编程实现。
+
+![](/Image/专业技能/TensorRT/deepstream_lib.jpg)
