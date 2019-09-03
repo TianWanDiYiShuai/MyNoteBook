@@ -96,5 +96,7 @@
 
 ![](/Image/专业技能/TensorRT/inception统计折线图.png)
 
+\*\*在batch为2时有一个明显的上升趋势\*\*
+
 
 
