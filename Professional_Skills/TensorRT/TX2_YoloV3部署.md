@@ -37,4 +37,4 @@
 
 ![](/Image/专业技能/TensorRT/yolo_test.jpg)
 
-每秒8.3帧左右 
+每秒8.3帧左右 。
